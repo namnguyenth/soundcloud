@@ -1,0 +1,31 @@
+<section>
+    <div class="board" [innerHTML]="src | safe: 'html'"></div>
+    <div class="user">
+        <div class="imgUser">s</div>
+        <input type="text" name="" id="" placeholder="Write a comment">
+    </div>
+    <div class="option">
+        <a><i class="fas fa-heart"></i>Like</a>
+        <a><i class="fas fa-redo"></i>Repost</a>
+        <a><i class="fas fa-share-square"></i>Share</a>
+        <a><i class="fas fa-plus-circle"></i>Add to next up</a>
+        <a><i class="fas fa-ellipsis-h"></i>More</a>
+    </div>
+    <div class="m">
+        <div class="profile">
+            <div class="avatar">{{avatar}}</div>
+            <h2>{{author}}</h2>
+            <h2>{{follower}}</h2>
+            <h2>{{songName}}</h2>
+            <button>follow</button>
+        </div>
+        <div class="listComment">
+            <h1>{{comment}} comment</h1>
+            <div class="cmt">
+                <h1>UserName</h1>
+                <h2>noi dung</h2>
+            </div>
+        </div>
+    </div>
+
+</section>

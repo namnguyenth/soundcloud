@@ -1,0 +1,46 @@
+section {
+    position: absolute;
+    width: 63%;
+    height: auto;
+    top: 8%;
+    left: 4%;
+
+}
+section .board{
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+}
+section .user{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+section .imgUser{
+    width: 40px;
+    height: 40px;
+    background-color: tomato;
+}
+section .user input {
+    width: 98%;
+    border: none;
+}
+section .m {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+section .m .profile {
+    width: 25%;
+    height: auto;
+    background-color: red;
+    display: block;
+}
+section .m .listComment {
+    width: 74.9999%;
+    height: auto;
+    background-color: royalblue;
+    display: block;
+}

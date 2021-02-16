@@ -1,0 +1,15 @@
+<div class="display-parent">
+  <div class="display">
+    <div class="content">
+      <h1>Hear the latest posts from the people you’re following:</h1>
+      <div class="stream-list">
+        <div *ngFor="let item of listStream" class="list">
+          <h2>{{item.author}}&#160;<h2 style="font-weight: lighter;">{{item.description}}</h2></h2>
+          <h3>{{item.genre}}</h3> 
+          <div [innerHTML]="item.link | safe: 'html'"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
