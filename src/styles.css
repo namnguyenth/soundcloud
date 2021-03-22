@@ -7,19 +7,8 @@
 a {
     text-decoration: none;
 }
-/* @font-face {
-    font-family: "SVN-Gilroy Light";
-    font-style: normal;
-    font-weight: normal;
-    src: url("SVNGilroy\ Light.woff") format("woff");
-  }
-  
-@font-face {
-    font-family: "SVN-Gilroy Bold";
-    font-style: normal;
-    font-weight: normal;
-    src: url("SVNGilroy\ Bold.woff") format("woff");
-  } */
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+
 app-player{
   position: fixed;
   width: 100%;

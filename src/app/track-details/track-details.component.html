@@ -1,31 +1,170 @@
 <section>
-    <div class="board" [innerHTML]="src | safe: 'html'"></div>
-    <div class="user">
-        <div class="imgUser">s</div>
-        <input type="text" name="" id="" placeholder="Write a comment">
+  <div class="board" [innerHTML]="src | safe: 'html'"></div>
+  <div class="user">
+    <div class="imgUser">
+      <nz-avatar [nzSize]="40" nzIcon="user"></nz-avatar>
     </div>
-    <div class="option">
-        <a><i class="fas fa-heart"></i>Like</a>
-        <a><i class="fas fa-redo"></i>Repost</a>
-        <a><i class="fas fa-share-square"></i>Share</a>
-        <a><i class="fas fa-plus-circle"></i>Add to next up</a>
-        <a><i class="fas fa-ellipsis-h"></i>More</a>
+    <input nz-input placeholder="Write to comment" />
+  </div>
+  <div class="option">
+    <button nz-button nzType="default">
+      <a><i class="fas fa-heart"></i>Like</a>
+    </button>
+    <button nz-button nzType="default">
+      <a><i class="fas fa-redo"></i>Repost</a>
+    </button>
+    <button nz-button nzType="default">
+      <a><i class="fas fa-share-square"></i>Share</a>
+    </button>
+    <button nz-button nzType="default">
+      <a><i class="fas fa-plus-circle"></i>Add to next up</a>
+    </button>
+    <button nz-button nzType="default">
+      <a><i class="fas fa-ellipsis-h"></i>More</a>
+    </button>
+  </div>
+  <div class="m">
+    <div class="profile">
+      <nz-avatar [nzSize]="90" nzIcon="user"></nz-avatar>
+      <!-- <div class="avatar">{{ avatar }}</div> -->
+      <h2>{{ author }}</h2>
+      <nz-badge
+        nzStandalone
+        [nzCount]="109"
+        [nzStyle]="{ backgroundColor: '#52c41a' }"
+      ></nz-badge>
+      <!-- {{follower}} -->
+      <p>
+        <button
+          nz-button
+          [nzType]="'primary'"
+          (click)="checkButton()"
+          [nzSize]="'small'"
+        >
+          {{ !isCheckedButton ? "Follow" : "Unfollow" }}
+        </button>
+      </p>
     </div>
-    <div class="m">
-        <div class="profile">
-            <div class="avatar">{{avatar}}</div>
-            <h2>{{author}}</h2>
-            <h2>{{follower}}</h2>
-            <h2>{{songName}}</h2>
-            <button>follow</button>
+    <div class="listComment">
+      <div class="cmt">
+        <div class="comment">
+          <nz-comment nzAuthor="Han Solo" [nzDatetime]="time">
+            <nz-avatar
+              nz-comment-avatar
+              nzIcon="user"
+              nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            ></nz-avatar>
+            <nz-comment-content>
+              <p>
+                We supply a series of design principles, practical patterns and
+                high quality design resources (Sketch and Axure), to help people
+                create their product prototypes beautifully and efficiently.
+              </p>
+            </nz-comment-content>
+            <nz-comment-action>
+              <i
+                nz-tooltip
+                nzTitle="Like"
+                nz-icon
+                nzType="like"
+                [nzTheme]="likes > 0 ? 'twotone' : 'outline'"
+                (click)="like()"
+              ></i>
+              <span class="count like">{{ likes }}</span>
+            </nz-comment-action>
+            <nz-comment-action>
+              <i
+                nz-tooltip
+                nzTitle="Dislike"
+                nz-icon
+                nzType="dislike"
+                [nzTheme]="dislikes > 0 ? 'twotone' : 'outline'"
+                (click)="dislike()"
+              ></i>
+              <span class="count dislike">{{ dislikes }}</span>
+            </nz-comment-action>
+            <nz-comment-action>Reply to</nz-comment-action>
+          </nz-comment>
         </div>
-        <div class="listComment">
-            <h1>{{comment}} comment</h1>
-            <div class="cmt">
-                <h1>UserName</h1>
-                <h2>noi dung</h2>
-            </div>
+        <div class="comment">
+          <nz-comment nzAuthor="Han Solo" [nzDatetime]="time">
+            <nz-avatar
+              nz-comment-avatar
+              nzIcon="user"
+              nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            ></nz-avatar>
+            <nz-comment-content>
+              <p>
+                We supply a series of design principles, practical patterns and
+                high quality design resources (Sketch and Axure), to help people
+                create their product prototypes beautifully and efficiently.
+              </p>
+            </nz-comment-content>
+            <nz-comment-action>
+              <i
+                nz-tooltip
+                nzTitle="Like"
+                nz-icon
+                nzType="like"
+                [nzTheme]="likes > 0 ? 'twotone' : 'outline'"
+                (click)="like()"
+              ></i>
+              <span class="count like">{{ likes }}</span>
+            </nz-comment-action>
+            <nz-comment-action>
+              <i
+                nz-tooltip
+                nzTitle="Dislike"
+                nz-icon
+                nzType="dislike"
+                [nzTheme]="dislikes > 0 ? 'twotone' : 'outline'"
+                (click)="dislike()"
+              ></i>
+              <span class="count dislike">{{ dislikes }}</span>
+            </nz-comment-action>
+            <nz-comment-action>Reply to</nz-comment-action>
+          </nz-comment>
         </div>
+        <div class="comment">
+          <nz-comment nzAuthor="Han Solo" [nzDatetime]="time">
+            <nz-avatar
+              nz-comment-avatar
+              nzIcon="user"
+              nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+            ></nz-avatar>
+            <nz-comment-content>
+              <p>
+                We supply a series of design principles, practical patterns and
+                high quality design resources (Sketch and Axure), to help people
+                create their product prototypes beautifully and efficiently.
+              </p>
+            </nz-comment-content>
+            <nz-comment-action>
+              <i
+                nz-tooltip
+                nzTitle="Like"
+                nz-icon
+                nzType="like"
+                [nzTheme]="likes > 0 ? 'twotone' : 'outline'"
+                (click)="like()"
+              ></i>
+              <span class="count like">{{ likes }}</span>
+            </nz-comment-action>
+            <nz-comment-action>
+              <i
+                nz-tooltip
+                nzTitle="Dislike"
+                nz-icon
+                nzType="dislike"
+                [nzTheme]="dislikes > 0 ? 'twotone' : 'outline'"
+                (click)="dislike()"
+              ></i>
+              <span class="count dislike">{{ dislikes }}</span>
+            </nz-comment-action>
+            <nz-comment-action>Reply to</nz-comment-action>
+          </nz-comment>
+        </div>
+      </div>
     </div>
-
+  </div>
 </section>

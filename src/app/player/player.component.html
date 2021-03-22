@@ -1,8 +1,8 @@
-<div class="playControl">
-    <a href=""><i class="fas fa-backward"></i></a>
-    <a href=""><i class="fas fa-forward"></i></a>
-    <a href=""> <i class="fas fa-pause"></i> </a>
-    <a href=""><i class="fas fa-play"></i> </a>
-    <a href=""><i class="fas fa-redo"></i></a>
-    <a href=""><i class="fas fa-random"></i></a>
-</div>
+<button nz-button nzType="primary" (click)="open()">Open</button>
+<nz-drawer [nzClosable]="false" [nzVisible]="visible" [nzPlacement]="placement" nzTitle="Basic Drawer" (nzOnClose)="close()">
+  <ng-container *nzDrawerContent>
+    <p>Some contents...</p>
+    <p>Some contents...</p>
+    <p>Some contents...</p>
+  </ng-container>
+</nz-drawer>

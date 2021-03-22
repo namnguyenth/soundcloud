@@ -1,46 +1,51 @@
 section {
-    position: absolute;
-    width: 63%;
-    height: auto;
-    top: 8%;
-    left: 4%;
-
+  position: absolute;
+  width: 63%;
+  height: auto;
+  top: 8%;
+  left: 4%;
 }
-section .board{
-    width: 100%;
-    height: auto;
-    background-color: transparent;
+section .board {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
 }
-section .user{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
+section .user {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
 }
-section .imgUser{
-    width: 40px;
-    height: 40px;
-    background-color: tomato;
-}
-section .user input {
-    width: 98%;
-    border: none;
+nz-avatar {
+  margin-top: 16px;
+  margin-right: 16px;
 }
 section .m {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
 }
 section .m .profile {
-    width: 25%;
-    height: auto;
-    background-color: red;
-    display: block;
+  width: 25%;
+  height: auto;
+  display: block;
 }
 section .m .listComment {
-    width: 74.9999%;
-    height: auto;
-    background-color: royalblue;
-    display: block;
+  width: 74.9999%;
+  height: auto;
+  display: block;
+}
+.count {
+  padding-left: 8px;
+  cursor: auto;
+}
+.ant-comment-rtl .count {
+  padding-right: 8px;
+  padding-left: 0;
+}
+[nz-button] {
+  margin-right: 8px;
+  margin-bottom: 12px;
+  margin-top: 12px;
 }

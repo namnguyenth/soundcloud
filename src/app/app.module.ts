@@ -13,6 +13,22 @@ import { PlayerComponent } from './player/player.component';
 import { TrackDetailsComponent } from './track-details/track-details.component';
 import { SoundService } from 'src/app/sound.service';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzCommentModule } from 'ng-zorro-antd/comment';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+
+registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,12 +39,19 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SafePipe,
     PlayerComponent,
     TrackDetailsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // SoundService,
+    NzPaginationModule,
+    NzDrawerModule,
+    NzAvatarModule,
+    NzInputModule,
+    NzCommentModule,
+    NzButtonModule,
+    NzBadgeModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
@@ -36,9 +59,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
       { path: 'track-details/:id', component: TrackDetailsComponent },
       { path: '**', component: NotFoundComponent }
     ]),
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
 
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

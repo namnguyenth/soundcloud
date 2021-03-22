@@ -1,15 +1,19 @@
 import { Component, OnDestroy, OnInit, Sanitizer } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-// import { Subscription } from 'rxjs';
+import { formatDistance } from 'date-fns';
 import { SoundService } from 'src/app/sound.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { NzButtonSize } from 'ng-zorro-antd/button';
+
 @Component({
   selector: 'app-track-details',
   templateUrl: './track-details.component.html',
   styleUrls: ['./track-details.component.css']
 })
 export class TrackDetailsComponent implements OnInit {
-
+  likes = 0;
+  dislikes = 0;
+  time = formatDistance(new Date(), new Date());
   public item: any = [];
   id = "";
   author = "";
@@ -46,7 +50,19 @@ export class TrackDetailsComponent implements OnInit {
     });
   }
 
+  like(): void {
+    this.likes = 1;
+    this.dislikes = 0;
+  }
 
+  dislike(): void {
+    this.likes = 0;
+    this.dislikes = 1;
+  }
+  isCheckedButton = true;
 
+  checkButton(): void {
+    this.isCheckedButton = !this.isCheckedButton;
+  }
 
 }

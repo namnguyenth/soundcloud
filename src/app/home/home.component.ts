@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SoundService } from 'src/app/sound.service';
 import { } from '@angular/compiler'
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.listStream = this._soundService.getSound();
-    this.listFull = this._soundService.getFull(); 
+    this.listFull = this._soundService.getFull();
   }
 
 }
