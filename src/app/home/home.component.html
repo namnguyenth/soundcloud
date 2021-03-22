@@ -3,22 +3,19 @@
     <div class="content-suggestion">
       <h2>More of what you like</h2>
       <p>Suggestions based on what you've liked or played</p>
-      <button class="next">>></button>
       <div class="gallery">
         <div class="block" *ngFor="let item of listStream">
           <div class="imgSugg">
             <img src="" alt="">
           </div>
-          <p [routerLink]="['/track-details',item.id]">{{item.title}}</p>
+          <p [routerLink]="['/track-details',item.title]">{{item.title}}</p>
 
         </div>
       </div>
     </div>
-    <div class="content-top50">
+    <div class="content-top50 ">
       <h2>Charts: Top 50</h2>
       <p>The most played tracks on SoundCloud this week</p>
-      <button class="next">>></button>
-
       <div class="gallery">
         <div class="block" *ngFor="let item of listStream">
           <div class="imgSugg">
@@ -27,22 +24,8 @@
           <p [routerLink]="['/track-details',item.id]">{{item.title}}</p>
 
         </div>
-      </div>    </div>
-    <div class="content-weekly">
-      <h2>The Upload</h2>
-      <p>Newly posted track. Just for you</p>
-      <div class="gallery">
-        <img src="https://i1.sndcdn.com/artworks-6m9R0u7NvTje0U1k-P4Uu5w-t500x500.jpg" alt="">
-        <div class="ngForList">
-          <div *ngFor="let item of listStream">
-            <p>
-              <a [routerLink]="['/track-details',item.id]"> {{item.title}}</a>
-            </p>
-            <hr>
-          </div>
-        </div>
-
       </div>
     </div>
+
   </div>
 </div>

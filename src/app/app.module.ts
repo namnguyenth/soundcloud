@@ -7,7 +7,6 @@ import { HeaderComponent } from './header/header.component';
 import { DisplayComponent } from './display/display.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { SafePipe } from './display/Safe.pipe';
 import { PlayerComponent } from './player/player.component';
 import { TrackDetailsComponent } from './track-details/track-details.component';
@@ -27,6 +26,7 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
 registerLocaleData(en);
 @NgModule({
@@ -35,7 +35,6 @@ registerLocaleData(en);
     HeaderComponent,
     DisplayComponent,
     HomeComponent,
-    SidebarComponent,
     SafePipe,
     PlayerComponent,
     TrackDetailsComponent,
@@ -52,6 +51,7 @@ registerLocaleData(en);
     NzCommentModule,
     NzButtonModule,
     NzBadgeModule,
+    NzLayoutModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
